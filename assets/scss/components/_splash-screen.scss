@@ -1,0 +1,66 @@
+.splash-screen {
+  @extend .d-flex,
+    .justify-content-center,
+    .align-items-center,
+    .position-fixed,
+    .overflow-hidden;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: linear-gradient(113.38deg, $green-dark 0.43%, $primary 133.09%);
+  h1 {
+    font-size: 3.375rem;
+    font-family: 'Inter';
+    font-weight: 700;
+    color: $white;
+    animation: moveIn 0.3s ease-in forwards;
+  }
+  &__img {
+    width: 185px;
+    img {
+      animation: zoomOut 0.3s ease-in forwards;
+    }
+  }
+  &__hide {
+    animation: fadeOut 0.5s ease-out forwards, hide 0.001s 0.5s forwards;
+  }
+  @keyframes zoomOut {
+    from {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes moveIn {
+    from {
+      transform: translate(3rem);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes hide {
+    from {
+      height: 100vh;
+    }
+    to {
+      height: 0;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+header {
+  @extend .sticky-top, .shadow-sm, .d-flex, .flex-column;
+  height: $header-height;
+  width: 100%;
+}
